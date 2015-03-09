@@ -11,7 +11,16 @@
 			'sources': [
 				'infix/infix.h',
 				'infix/infix.c',
-			]
+				'infix/obj.c',
+				'infix/link.c',
+				'infix/state.c',
+				'infix/tree.c',
+				'infix/lex.c',
+				'infix/parse.c',
+			],
+			'include_dirs': [
+				'infix',
+			],
 		},
 		{
 			'target_name': 'infix',

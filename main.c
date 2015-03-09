@@ -5,9 +5,10 @@
 
 #include <stdio.h>
 
-#include "infix.h"
+#include <infix.h>
 
 int main() {
-	puts("hello!");
+	char *exp = "1+2*3-6";
+	printf("'%s' => %d\n", exp, infix(exp));
 	return 0;
 }
