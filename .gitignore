@@ -1,0 +1,6 @@
+# gyp files
+*.Makefile
+Makefile
+gyp*
+*.mk
+out
