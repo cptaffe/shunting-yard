@@ -22,9 +22,7 @@ Obj *make_iobj(int i) {
 	return obj;
 }
 
-void free_obj(Obj *obj) {
-	free(obj);
-}
+void free_obj(Obj *obj) { free(obj); }
 
 void print_obj(Obj *obj) {
 	if (obj == NULL) {

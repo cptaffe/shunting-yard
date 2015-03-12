@@ -17,14 +17,14 @@ typedef enum {
 } Type;
 
 typedef enum {
-	RPAREN,	// (
-	LPAREN,	// )
-	MUL,	// *
-	DIV,	// /
-	ADD,	// +
-	SUB,	// -
-	RSHIFT,	// >>
-	LSHIFT,	// <<
+	RPAREN, // (
+	LPAREN, // )
+	MUL,    // *
+	DIV,    // /
+	ADD,    // +
+	SUB,    // -
+	RSHIFT, // >>
+	LSHIFT, // <<
 } Operator;
 
 typedef struct {
@@ -63,10 +63,10 @@ void print_tree(Tree *tree);
 
 typedef struct {
 	char *in;
-	int pos;		// current position
-	Link *opstk;	// operator stack
+	int pos;     // current position
+	Link *opstk; // operator stack
 	Link *last;
-	Tree *out;		// binary tree output.
+	Tree *out; // binary tree output.
 } State;
 
 State *make_state(char *input);

@@ -11,8 +11,9 @@ int infix(char *str) {
 	State *state = make_state(str);
 	void *func = &p_start;
 
+	// run state machine
 	while (func != NULL) {
-		func = ((void *(*)(State *)) func)(state);
+		func = ((void *(*)(State *))func)(state);
 	}
 
 	print_tree(state->out);

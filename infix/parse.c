@@ -16,12 +16,7 @@ static int isop(char *str);
 static int isop(char *str) {
 	int i, s = 0;
 	char *ops[] = {
-		"+",
-		"-",
-		"*",
-		"/",
-		"<<",
-		">>",
+	    "+", "-", "*", "/", "<<", ">>",
 	};
 
 	for (i = 0; i < (sizeof(ops) / sizeof(char *)); i++) {
@@ -40,10 +35,10 @@ void *p_op(State *state) {
 	int i;
 	Operator op;
 
-	for (i = 0; i < ((sizeof(str) / sizeof(char)) - 1)
-		&& (c = next(state)) != EOF
-		&& !isdigit(c)
-		&& !whitespace(c); i++) {
+	for (i = 0;
+	     i < ((sizeof(str) / sizeof(char)) - 1) &&
+		 (c = next(state)) != EOF && !isdigit(c) && !whitespace(c);
+	     i++) {
 		str[i++] = c;
 	}
 
@@ -84,9 +79,9 @@ void *p_num(State *state) {
 	char c, str[100] = {0};
 	int i;
 
-	for (i = 0; i < ((sizeof(str) / sizeof(char)) - 1)
-		&& (c = next(state)) != EOF
-		&& isdigit(c); i++) {
+	for (i = 0; i < ((sizeof(str) / sizeof(char)) - 1) &&
+			(c = next(state)) != EOF && isdigit(c);
+	     i++) {
 		str[i++] = c;
 	}
 

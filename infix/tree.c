@@ -16,9 +16,15 @@ Tree *make_tree(Obj *obj) {
 
 void free_tree(Tree *tree) {
 	if (tree != NULL) {
+
+		// recurse to free children
 		free_tree(tree->child[0]);
 		free_tree(tree->child[1]);
+
+		// free object data.
 		free_obj(tree->obj);
+
+		// free tree structure
 		free(tree);
 	}
 }
@@ -29,7 +35,7 @@ void tree_insert(Tree **tree, Obj *obj) {
 	if ((*tree)->child[0] == NULL) {
 		new = make_tree(obj);
 		new->child[0] = *tree;
-	} else if ((*tree)->child[1] == NULL){
+	} else if ((*tree)->child[1] == NULL) {
 		new = make_tree(obj);
 		(*tree)->child[1] = new;
 		new = *tree;
